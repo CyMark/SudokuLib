@@ -1,0 +1,35 @@
+SudokuLib RELEASE NOTES
+Date: 15 December 2018
+
+Description:  Game logic for Sodoku
+
+.NET 4.6.1
+
+Repository:
+https://cymarklargo.com:8443/svn/VS2017/SudokuLib
+
+SudokuLib RELEASE V0.0 Alpha BUILD 1 Revision 85
+Date: 18 December 2018
+- All basic classes and UnitTests
+- Need to do more work on Sodoku class
+
+
+SudokuLib RELEASE V0.0 Alpha BUILD 2 Revision 103
+Date: 21 June 2019
+- All basic functionality working
+
+
+SudokuLib RELEASE V0.0 Alpha BUILD 3 Revision 108
+Date: 22 June 2019
+- Do more testing on availability in a subgrid
+- Sodoku:
+	- Add bool ValidateMove(int x, int y, int rank)
+
+
+SudokuLib RELEASE V0.1 Beta BUILD 4 Revision 113
+Date: 26 June 2019
+- Libary continuing with correc spelling SudokuLib.
+
+
+
+===== end =====
