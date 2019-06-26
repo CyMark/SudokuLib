@@ -9,10 +9,10 @@ namespace SudokuLib
     /// <summary>
     /// This class contains any Sodoku 9 items, wether it is a 3x3 square or row or column.
     /// </summary>
-    public class SodokuItem : IEnumerable<CellContent>
+    public class SudokuItem : IEnumerable<CellContent>
     {
         protected List<CellContent> cells;
-        public SodokuItem()
+        public SudokuItem()
         {
             Init();
         }
@@ -21,7 +21,7 @@ namespace SudokuLib
         /// Copy Constructor
         /// </summary>
         /// <param name="another"></param>
-        public SodokuItem(SodokuItem another)
+        public SudokuItem(SudokuItem another)
         {
             Init();
             for (int i = 0; i < 9; i++)
@@ -31,7 +31,7 @@ namespace SudokuLib
         } // ctor
 
 
-        public SodokuItem(List<CellContent> contentList)
+        public SudokuItem(List<CellContent> contentList)
         {
             Init();
             for (int i = 0; i < 9; i++)

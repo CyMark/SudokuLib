@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace SudokuLib
 {
     /// <summary>
-    /// Sodoku board.  The board is a list of rows of SodokuItems (each with 9 elements).  Columns and 3x3 grids are derived from these rows.
+    /// Sudoku board.  The board is a list of rows of SudokuItems (each with 9 elements).  Columns and 3x3 grids are derived from these rows.
     /// </summary>
     public class Sudoku
     {
-        private List<SodokuItem> rows;
+        private List<SudokuItem> rows;
 
         public Sudoku()
         {
@@ -23,10 +23,10 @@ namespace SudokuLib
         /// </summary>
         public void ClearSudoku()
         {
-            rows = new List<SodokuItem>();
+            rows = new List<SudokuItem>();
             for (int n = 0; n < 9; n++)
             {
-                rows.Add(new SodokuItem());
+                rows.Add(new SudokuItem());
             }
         }
 
@@ -42,7 +42,7 @@ namespace SudokuLib
                 {
                     if (!this[x, y].IsFixed) { this[x, y] = new CellContent(0); }
                 }
-                //rows.Add(new SodokuItem());
+                //rows.Add(new SudokuItem());
             }
         }
 
@@ -52,7 +52,7 @@ namespace SudokuLib
 
 
         /// <summary>
-        /// Validates that the sodoku has no violations in entries
+        /// Validates that the Sudoku has no violations in entries
         /// </summary>
         /// <returns></returns>
         public bool Validate()
@@ -128,10 +128,10 @@ namespace SudokuLib
         public void ClearCell(int x, int y) => this[x, y] = new CellContent(0);
         public void ClearCell(GridPosition g) => this[g.X, g.Y] = new CellContent(0);
 
-        public SodokuItem GetColumnAt(int x)
+        public SudokuItem GetColumnAt(int x)
         {
             x = ValidateIndex(x);
-            SodokuItem column = new SodokuItem();
+            SudokuItem column = new SudokuItem();
             for (int n = 0; n < 9; n++)
             {
                 column.ReplaceItem(rows[n][x], n);
@@ -140,7 +140,7 @@ namespace SudokuLib
         }
 
 
-        public SodokuItem GetRowAt(int y)
+        public SudokuItem GetRowAt(int y)
         {
             y = ValidateIndex(y);
             return rows[y];
@@ -153,11 +153,11 @@ namespace SudokuLib
         /// <param name="xGrids"></param>
         /// <param name="yGrids"></param>
         /// <returns></returns>
-        public Sodoku3x3 GetSudoku3x3At(int xGrids, int yGrids)
+        public Sudoku3x3 GetSudoku3x3At(int xGrids, int yGrids)
         {
             xGrids = ValidateIndex3x3(xGrids);
             yGrids = ValidateIndex3x3(yGrids);
-            Sodoku3x3 grid = new Sodoku3x3();
+            Sudoku3x3 grid = new Sudoku3x3();
             int xOffset = xGrids * 3;
             int yOffset = yGrids * 3;
 
@@ -178,10 +178,10 @@ namespace SudokuLib
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public Sodoku3x3 GetSudoku3x3AtGridPosition(int x, int y) => GetSudoku3x3At(GridIndexFromItemIndex(x), GridIndexFromItemIndex(y));
+        public Sudoku3x3 GetSudoku3x3AtGridPosition(int x, int y) => GetSudoku3x3At(GridIndexFromItemIndex(x), GridIndexFromItemIndex(y));
 
 
-        public SodokuItem Sudoku3x3ToItemAt(int xGrids, int yGrids) => GetSudoku3x3At(xGrids, yGrids).ToSodokuItem();
+        public SudokuItem Sudoku3x3ToItemAt(int xGrids, int yGrids) => GetSudoku3x3At(xGrids, yGrids).ToSudokuItem();
 
 
         public List<GridContent> ReadGridContent()

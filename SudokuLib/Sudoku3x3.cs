@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SudokuLib
 {
-    public class Sodoku3x3 : SodokuItem
+    public class Sudoku3x3 : SudokuItem
     {
 
-        public Sodoku3x3() : base() {; }
+        public Sudoku3x3() : base() {; }
 
-        public Sodoku3x3(SodokuItem another) : base(another) { ; }
+        public Sudoku3x3(SudokuItem another) : base(another) { ; }
 
-        public Sodoku3x3(List<CellContent> contentList) : base(contentList) { ; }
+        public Sudoku3x3(List<CellContent> contentList) : base(contentList) { ; }
 
         public CellContent this[int x, int y]
         {
@@ -95,9 +95,9 @@ namespace SudokuLib
             return ValidateIndex(idx);
         }
 
-        public SodokuItem ToSodokuItem()
+        public SudokuItem ToSudokuItem()
         {
-            return new SodokuItem(cells);
+            return new SudokuItem(cells);
         }
 
 
