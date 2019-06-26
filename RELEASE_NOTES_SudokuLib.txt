@@ -28,7 +28,7 @@ Date: 22 June 2019
 
 SudokuLib RELEASE V0.1 Beta BUILD 4 Revision 113
 Date: 26 June 2019
-- Libary continuing with correc spelling SudokuLib.
+- Libary continuing with correct spelling SudokuLib.  Old Libary was SodokuLib.
 
 
 
